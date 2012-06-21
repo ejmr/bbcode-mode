@@ -36,10 +36,28 @@
 (defconst bbcode-mode-version-number "1.0.0"
   "BBCode Mode version number.")
 
+(defun bbcode/make-tag-regex (tag)
+  "Makes a regular expression that matches the given `tag' name.
+The expression contains no capture groups."
+  (format "\\[%s\\].*?\\[/%s\\]" tag tag))
+
+(defconst bbcode/font-lock-keywords
+  (list
+   `(,(bbcode/make-tag-regex "b") . 'bold)
+   `(,(bbcode/make-tag-regex "i") . 'italic)
+   `(,(bbcode/make-tag-regex "code") . 'font-lock-keyword-face)
+   `(,(bbcode/make-tag-regex "url") . 'font-lock-keyword-face)
+   `(,(bbcode/make-tag-regex "img") . 'font-lock-keyword-face))
+  "Regular expressions to highlight BBCode markup.")
+
 (define-derived-mode bbcode-mode text-mode "BBCode"
   "Major mode for writing BBCode markup.
 
 \\{bbcode-mode-map}"
+  ;; Setup font-lock.
+  (set (make-local-variable 'font-lock-defaults)
+       '(bbcode/font-lock-keywords nil t))
+  (set (make-local-variable 'font-lock-multiline) t)
   ;; The most commonly predicted use-case for this mode is writing
   ;; text that will be posted on a website forum.  Those forum
   ;; programs automatically turn newlines into <br/> tags, which is
