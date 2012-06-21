@@ -39,6 +39,8 @@
 (defun bbcode/make-tag-regex (tag)
   "Makes a regular expression that matches the given `tag' name.
 The expression contains no capture groups."
+  (unless (stringp tag)
+    (error "Requires a string but called with %s" tag))
   (format "\\[%s\\].*?\\[/%s\\]" tag tag))
 
 (defconst bbcode/font-lock-keywords
