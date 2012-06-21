@@ -36,4 +36,18 @@
 (defconst bbcode-mode-version-number "1.0.0"
   "BBCode Mode version number.")
 
+(define-derived-mode bbcode-mode text-mode "BBCode"
+  "Major mode for writing BBCode markup.
+
+\\{bbcode-mode-map}"
+  ;; The most commonly predicted use-case for this mode is writing
+  ;; text that will be posted on a website forum.  Those forum
+  ;; programs automatically turn newlines into <br/> tags, which is
+  ;; not what we want.  But we still want automatic newlines for
+  ;; paragraphs as we write.  So we disable auto-fill-mode in order to
+  ;; avoid actual newlines, but enable visual-line-mode so that text
+  ;; is automatically wrapped for readabality.
+  (auto-fill-mode 0)
+  (visual-line-mode 1))
+
 (provide 'bbcode-mode)
