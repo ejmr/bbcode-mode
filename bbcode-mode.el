@@ -33,7 +33,7 @@
 ;;;     (require 'bbcode-mode)
 ;;;
 
-(defconst bbcode-mode-version-number "1.0.0"
+(defconst bbcode-mode-version-number "1.0.0-alpha"
   "BBCode Mode version number.")
 
 (defun bbcode/make-tag-regex (tag)
