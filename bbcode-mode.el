@@ -49,6 +49,7 @@ The expression contains no capture groups."
    `(,(bbcode/make-tag-regex "i") . 'italic)
    `(,(bbcode/make-tag-regex "code") . 'font-lock-function-name-face)
    `(,(bbcode/make-tag-regex "url") . 'font-lock-keyword-face)
+   `(,(bbcode/make-tag-regex "center") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "quote") . 'font-lock-doc-face)
    `(,(bbcode/make-tag-regex "size") . 'font-lock-variable-name-face)
    `(,(bbcode/make-tag-regex "color") . 'font-lock-variable-name-face)
@@ -103,6 +104,7 @@ buffer."
 (bbcode/make-key-binding "C-c C-t u" "url")
 (bbcode/make-key-binding "C-c C-t m" "img")
 (bbcode/make-key-binding "C-c C-t q" "quote")
+(bbcode/make-key-binding "C-c C-t n" "center")
 (bbcode/make-key-binding "C-c C-f s" "size")
 (bbcode/make-key-binding "C-c C-f c" "color")
 
