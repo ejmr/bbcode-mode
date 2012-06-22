@@ -105,6 +105,7 @@ buffer."
        (interactive "P")
        (bbcode/insert-tag prefix (region-beginning) (region-end) ,tag))))
 
+;; Keys that insert most tags are prefixed with 'C-c C-t'.
 (bbcode/make-key-binding "C-c C-t i" "i")
 (bbcode/make-key-binding "C-c C-t b" "b")
 (bbcode/make-key-binding "C-c C-t c" "code")
@@ -112,6 +113,8 @@ buffer."
 (bbcode/make-key-binding "C-c C-t m" "img")
 (bbcode/make-key-binding "C-c C-t q" "quote")
 (bbcode/make-key-binding "C-c C-t n" "center")
+
+;; Keys related to modifying font properties begin with 'C-c C-f'.
 (bbcode/make-key-binding "C-c C-f s" "size")
 (bbcode/make-key-binding "C-c C-f c" "color")
 
