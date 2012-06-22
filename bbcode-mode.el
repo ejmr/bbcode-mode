@@ -78,4 +78,35 @@ then places the point in the middle of the tags."
   (auto-fill-mode 0)
   (visual-line-mode 1))
 
+(defun bbcode/insert-italic ()
+  "Insert italic tags."
+  (interactive)
+  (bbcode/insert-tag "i"))
+
+(defun bbcode/insert-bold ()
+  "Insert bold tags."
+  (interactive)
+  (bbcode/insert-tag "b"))
+
+(defun bbcode/insert-code ()
+  "Insert code tags."
+  (interactive)
+  (bbcode/insert-tag "code"))
+
+(defun bbcode/insert-url ()
+  "Insert url tags."
+  (interactive)
+  (bbcode/insert-tag "url"))
+
+(defun bbcode/insert-image ()
+  "Insert img tags."
+  (interactive)
+  (bbcode/insert-tag "img"))
+
+(define-key bbcode-mode-map (kbd "C-c C-i") 'bbcode/insert-italic)
+(define-key bbcode-mode-map (kbd "C-c C-b") 'bbcode/insert-bold)
+(define-key bbcode-mode-map (kbd "C-c C-c") 'bbcode/insert-code)
+(define-key bbcode-mode-map (kbd "C-c C-l") 'bbcode/insert-url)
+(define-key bbcode-mode-map (kbd "C-c C-m") 'bbcode/insert-image)
+
 (provide 'bbcode-mode)
