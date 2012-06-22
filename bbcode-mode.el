@@ -79,41 +79,20 @@ then places the point in the middle of the tags."
   (auto-fill-mode 0)
   (visual-line-mode 1))
 
-(defun bbcode/insert-italic ()
-  "Insert italic tags."
-  (interactive)
-  (bbcode/insert-tag "i"))
+(defmacro bbcode/make-key-binding (key tag)
+  "Binds the sequence `key', which must be a valid argument for
+the macro `kbd', to a function that will insert `tag' into the
+buffer."
+  `(define-key bbcode-mode-map (kbd ,key)
+    '(lambda ()
+       (interactive)
+       (bbcode/insert-tag ,tag))))
 
-(defun bbcode/insert-bold ()
-  "Insert bold tags."
-  (interactive)
-  (bbcode/insert-tag "b"))
-
-(defun bbcode/insert-code ()
-  "Insert code tags."
-  (interactive)
-  (bbcode/insert-tag "code"))
-
-(defun bbcode/insert-url ()
-  "Insert url tags."
-  (interactive)
-  (bbcode/insert-tag "url"))
-
-(defun bbcode/insert-image ()
-  "Insert img tags."
-  (interactive)
-  (bbcode/insert-tag "img"))
-
-(defun bbcode/insert-quote ()
-  "Insert quote tags."
-  (interactive)
-  (bbcode/insert-tag "quote"))
-
-(define-key bbcode-mode-map (kbd "C-c C-i") 'bbcode/insert-italic)
-(define-key bbcode-mode-map (kbd "C-c C-b") 'bbcode/insert-bold)
-(define-key bbcode-mode-map (kbd "C-c C-c") 'bbcode/insert-code)
-(define-key bbcode-mode-map (kbd "C-c C-l") 'bbcode/insert-url)
-(define-key bbcode-mode-map (kbd "C-c C-m") 'bbcode/insert-image)
-(define-key bbcode-mode-map (kbd "C-c C-q") 'bbcode/insert-quote)
+(bbcode/make-key-binding "C-c C-i" "i")
+(bbcode/make-key-binding "C-c C-b" "b")
+(bbcode/make-key-binding "C-c C-c" "code")
+(bbcode/make-key-binding "C-c C-l" "url")
+(bbcode/make-key-binding "C-c C-m" "img")
+(bbcode/make-key-binding "C-c C-q" "quote")
 
 (provide 'bbcode-mode)
