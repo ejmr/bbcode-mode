@@ -49,6 +49,7 @@ The expression contains no capture groups."
    `(,(bbcode/make-tag-regex "i") . 'italic)
    `(,(bbcode/make-tag-regex "code") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "url") . 'font-lock-keyword-face)
+   `(,(bbcode/make-tag-regex "quote") . 'font-lock-doc-face)
    `(,(bbcode/make-tag-regex "img") . 'font-lock-keyword-face))
   "Regular expressions to highlight BBCode markup.")
 
@@ -103,10 +104,16 @@ then places the point in the middle of the tags."
   (interactive)
   (bbcode/insert-tag "img"))
 
+(defun bbcode/insert-quote ()
+  "Insert quote tags."
+  (interactive)
+  (bbcode/insert-tag "quote"))
+
 (define-key bbcode-mode-map (kbd "C-c C-i") 'bbcode/insert-italic)
 (define-key bbcode-mode-map (kbd "C-c C-b") 'bbcode/insert-bold)
 (define-key bbcode-mode-map (kbd "C-c C-c") 'bbcode/insert-code)
 (define-key bbcode-mode-map (kbd "C-c C-l") 'bbcode/insert-url)
 (define-key bbcode-mode-map (kbd "C-c C-m") 'bbcode/insert-image)
+(define-key bbcode-mode-map (kbd "C-c C-q") 'bbcode/insert-quote)
 
 (provide 'bbcode-mode)
