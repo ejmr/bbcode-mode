@@ -52,6 +52,14 @@ The expression contains no capture groups."
    `(,(bbcode/make-tag-regex "img") . 'font-lock-keyword-face))
   "Regular expressions to highlight BBCode markup.")
 
+(defun bbcode/insert-tag (tag)
+  "Inserts a pair of `tag' in the buffer at the current point and
+then places the point in the middle of the tags."
+  (interactive "MTag: ")
+  (let ((tag-string (format "[%s][/%s]" tag tag)))
+    (insert tag-string)
+    (search-backward "[")))
+
 (define-derived-mode bbcode-mode text-mode "BBCode"
   "Major mode for writing BBCode markup.
 
