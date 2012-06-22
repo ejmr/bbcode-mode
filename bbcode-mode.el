@@ -56,12 +56,14 @@ The expression contains no capture groups."
    `(,(bbcode/make-tag-regex "img") . 'font-lock-keyword-face))
   "Regular expressions to highlight BBCode markup.")
 
-(defun bbcode/insert-tag (start end tag)
+(defun bbcode/insert-tag (prefix start end tag)
   "Inserts a pair of `tag' in the buffer at the current point and
 then places the point in the middle of the tags.  The tag will be
 wrapped around the points `start' and `end' if the user has
-selected a region."
-  (interactive "rMTag: ")
+selected a region.  If the function is called with the universal
+prefix argument then the point will be placed in the opening tag
+so the user can enter any attributes."
+  (interactive "PrMTag: ")
   (if (and transient-mark-mode mark-active)
       (progn
         (kill-region start end)
@@ -69,7 +71,12 @@ selected a region."
         (yank)
         (insert (format "[/%s]" tag)))
     (insert (format "[%s][/%s]" tag tag)))
-  (search-backward "["))
+  (if prefix
+      (progn
+        (backward-char)
+        (search-backward "]")
+        (insert "="))
+    (search-backward "[")))
 
 (define-derived-mode bbcode-mode text-mode "BBCode"
   "Major mode for writing BBCode markup.
@@ -94,9 +101,9 @@ selected a region."
 the macro `kbd', to a function that will insert `tag' into the
 buffer."
   `(define-key bbcode-mode-map (kbd ,key)
-    '(lambda ()
-       (interactive)
-       (bbcode/insert-tag (region-beginning) (region-end) ,tag))))
+    '(lambda (prefix)
+       (interactive "P")
+       (bbcode/insert-tag prefix (region-beginning) (region-end) ,tag))))
 
 (bbcode/make-key-binding "C-c C-t i" "i")
 (bbcode/make-key-binding "C-c C-t b" "b")
