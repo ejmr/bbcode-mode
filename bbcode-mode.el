@@ -53,6 +53,7 @@ The expression contains no capture groups."
    `(,(bbcode/make-tag-regex "quote") . 'font-lock-doc-face)
    `(,(bbcode/make-tag-regex "size") . 'font-lock-variable-name-face)
    `(,(bbcode/make-tag-regex "color") . 'font-lock-variable-name-face)
+   `(,(bbcode/make-tag-regex "youtube") . 'font-lock-variable-name-face)
    `(,(bbcode/make-tag-regex "img") . 'font-lock-keyword-face))
   "Regular expressions to highlight BBCode markup.")
 
@@ -113,6 +114,7 @@ buffer."
 (bbcode/make-key-binding "C-c C-t m" "img")
 (bbcode/make-key-binding "C-c C-t q" "quote")
 (bbcode/make-key-binding "C-c C-t n" "center")
+(bbcode/make-key-binding "C-c C-t y" "youtube")
 
 ;; Keys related to modifying font properties begin with 'C-c C-f'.
 (bbcode/make-key-binding "C-c C-f s" "size")
