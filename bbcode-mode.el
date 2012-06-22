@@ -47,7 +47,7 @@ The expression contains no capture groups."
   (list
    `(,(bbcode/make-tag-regex "b") . 'bold)
    `(,(bbcode/make-tag-regex "i") . 'italic)
-   `(,(bbcode/make-tag-regex "code") . 'font-lock-keyword-face)
+   `(,(bbcode/make-tag-regex "code") . 'font-lock-function-name-face)
    `(,(bbcode/make-tag-regex "url") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "quote") . 'font-lock-doc-face)
    `(,(bbcode/make-tag-regex "img") . 'font-lock-keyword-face))
