@@ -41,7 +41,7 @@
 The expression contains no capture groups."
   (unless (stringp tag)
     (error "Requires a string but called with %s" tag))
-  (format "\\[%s\\].*?\\[/%s\\]" tag tag))
+  (format "\\[%s.*?\\].*?\\[/%s\\]" tag tag))
 
 (defconst bbcode/font-lock-keywords
   (list
