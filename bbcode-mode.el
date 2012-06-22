@@ -88,11 +88,11 @@ buffer."
        (interactive)
        (bbcode/insert-tag ,tag))))
 
-(bbcode/make-key-binding "C-c C-i" "i")
-(bbcode/make-key-binding "C-c C-b" "b")
-(bbcode/make-key-binding "C-c C-c" "code")
-(bbcode/make-key-binding "C-c C-l" "url")
-(bbcode/make-key-binding "C-c C-m" "img")
-(bbcode/make-key-binding "C-c C-q" "quote")
+(bbcode/make-key-binding "C-c C-t i" "i")
+(bbcode/make-key-binding "C-c C-t b" "b")
+(bbcode/make-key-binding "C-c C-t c" "code")
+(bbcode/make-key-binding "C-c C-t u" "url")
+(bbcode/make-key-binding "C-c C-t m" "img")
+(bbcode/make-key-binding "C-c C-t q" "quote")
 
 (provide 'bbcode-mode)
