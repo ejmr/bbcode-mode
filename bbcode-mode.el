@@ -58,6 +58,10 @@ The expression contains no capture groups."
    `(,(bbcode/make-tag-regex "li") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "ul") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "ol") . 'font-lock-keyword-face)
+   `(,(bbcode/make-tag-regex "table") . 'font-lock-keyword-face)
+   `(,(bbcode/make-tag-regex "tr") . 'font-lock-keyword-face)
+   `(,(bbcode/make-tag-regex "th") . 'bold)
+   `(,(bbcode/make-tag-regex "td") . 'font-lock-variable-name-face)
    `(,(bbcode/make-tag-regex "img") . 'font-lock-keyword-face))
   "Regular expressions to highlight BBCode markup.")
 
@@ -129,5 +133,11 @@ buffer."
 (bbcode/make-key-binding "C-c C-l u" "ul")
 (bbcode/make-key-binding "C-c C-l o" "ol")
 (bbcode/make-key-binding "C-c C-l i" "li")
+
+;; Keys for tables begin with 'C-c C-b'
+(bbcode/make-key-binding "C-c C-b t" "table")
+(bbcode/make-key-binding "C-c C-b h" "th")
+(bbcode/make-key-binding "C-c C-b r" "tr")
+(bbcode/make-key-binding "C-c C-b d" "td")
 
 (provide 'bbcode-mode)
