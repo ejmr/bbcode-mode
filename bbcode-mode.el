@@ -54,6 +54,10 @@ The expression contains no capture groups."
    `(,(bbcode/make-tag-regex "size") . 'font-lock-variable-name-face)
    `(,(bbcode/make-tag-regex "color") . 'font-lock-variable-name-face)
    `(,(bbcode/make-tag-regex "youtube") . 'font-lock-variable-name-face)
+   `(,(bbcode/make-tag-regex "list") . 'font-lock-keyword-face)
+   `(,(bbcode/make-tag-regex "li") . 'font-lock-keyword-face)
+   `(,(bbcode/make-tag-regex "ul") . 'font-lock-keyword-face)
+   `(,(bbcode/make-tag-regex "ol") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "img") . 'font-lock-keyword-face))
   "Regular expressions to highlight BBCode markup.")
 
@@ -119,5 +123,11 @@ buffer."
 ;; Keys related to modifying font properties begin with 'C-c C-f'.
 (bbcode/make-key-binding "C-c C-f s" "size")
 (bbcode/make-key-binding "C-c C-f c" "color")
+
+;; Keys for creating lists begin with 'C-c C-l'.
+(bbcode/make-key-binding "C-c C-l l" "list")
+(bbcode/make-key-binding "C-c C-l u" "ul")
+(bbcode/make-key-binding "C-c C-l o" "ol")
+(bbcode/make-key-binding "C-c C-l i" "li")
 
 (provide 'bbcode-mode)
