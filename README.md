@@ -11,6 +11,30 @@ please include the value of `bbcode-mode-version-number` and, if you
 have cloned the official Git repository, the commit hash of the
 version you are using.
 
+Supported Tags
+--------------
+
+* `[b]`
+* `[i]`
+* `[code]`
+* `[url]`
+* `[center]`
+* `[quote]`
+* `[size]`
+* `[color]`
+* `[youtube]`
+* `[list]`
+* `[li]`
+* `[ul]`
+* `[ol]`
+* `[table]`
+* `[tr]`
+* `[th]`
+* `[td]`
+* `[img]`
+
+
+
 [bbc]: http://bbcode.org/
 
 [emacs]: http://www.gnu.org/software/emacs/
