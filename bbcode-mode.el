@@ -81,9 +81,17 @@ so the user can enter any attributes."
         (insert (format "[/%s]" tag)))
     (insert (format "[%s][/%s]" tag tag)))
   (if prefix
+      ;; If the user called the command with the 'C-u' prefix then we
+      ;; need to find the first tag in the pair instead of the second
+      ;; like usual.  And we want the end of the tag.  But if we just
+      ;; search backwards for ']' we will get the second tag.  Since
+      ;; the point is on that character now we can (backward-char)
+      ;; once and *then* search backwards to get the proper position.
       (progn
         (backward-char)
         (search-backward "]")
+        ;; Since we are entering an attribute go ahead and add the
+        ;; (typically) mandatory '=' character.
         (insert "="))
     (search-backward "[")))
 
