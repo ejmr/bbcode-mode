@@ -110,6 +110,7 @@ so the user can enter any attributes."
   (set (make-local-variable 'font-lock-defaults)
        '(bbcode/font-lock-keywords nil t))
   (set (make-local-variable 'font-lock-multiline) t)
+  (font-lock-mode 1)
   ;; The most commonly predicted use-case for this mode is writing
   ;; text that will be posted on a website forum.  Those forum
   ;; programs automatically turn newlines into <br/> tags, which is
