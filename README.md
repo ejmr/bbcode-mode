@@ -16,6 +16,8 @@ Supported Tags
 
 * `[b]`
 * `[i]`
+* `[u]`
+* `[s]`
 * `[code]`
 * `[url]`
 * `[center]`

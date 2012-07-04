@@ -33,7 +33,7 @@
 ;;;     (require 'bbcode-mode)
 ;;;
 
-(defconst bbcode-mode-version-number "1.0.0"
+(defconst bbcode-mode-version-number "1.0.1"
   "BBCode Mode version number.")
 
 (defun bbcode/make-tag-regex (tag)
@@ -47,8 +47,10 @@ The expression contains no capture groups."
   (list
    `(,(bbcode/make-tag-regex "b") . 'bold)
    `(,(bbcode/make-tag-regex "i") . 'italic)
+   `(,(bbcode/make-tag-regex "u") . 'underline)
+   `(,(bbcode/make-tag-regex "s") . 'default)
    `(,(bbcode/make-tag-regex "code") . 'font-lock-function-name-face)
-   `(,(bbcode/make-tag-regex "url") . 'font-lock-keyword-face)
+   `(,(bbcode/make-tag-regex "url") . 'link)
    `(,(bbcode/make-tag-regex "center") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "quote") . 'font-lock-doc-face)
    `(,(bbcode/make-tag-regex "size") . 'font-lock-variable-name-face)
@@ -62,7 +64,7 @@ The expression contains no capture groups."
    `(,(bbcode/make-tag-regex "tr") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "th") . 'bold)
    `(,(bbcode/make-tag-regex "td") . 'font-lock-variable-name-face)
-   `(,(bbcode/make-tag-regex "img") . 'font-lock-keyword-face))
+   `(,(bbcode/make-tag-regex "img") . 'link))
   "Regular expressions to highlight BBCode markup.")
 
 (defun bbcode/insert-tag (prefix start end tag)
@@ -125,8 +127,10 @@ buffer."
 ;; Keys that insert most tags are prefixed with 'C-c C-t'.
 (bbcode/make-key-binding "C-c C-t i" "i")
 (bbcode/make-key-binding "C-c C-t b" "b")
+(bbcode/make-key-binding "C-c C-t u" "u")
+(bbcode/make-key-binding "C-c C-t s" "s")
 (bbcode/make-key-binding "C-c C-t c" "code")
-(bbcode/make-key-binding "C-c C-t u" "url")
+(bbcode/make-key-binding "C-c C-t l" "url")
 (bbcode/make-key-binding "C-c C-t m" "img")
 (bbcode/make-key-binding "C-c C-t q" "quote")
 (bbcode/make-key-binding "C-c C-t n" "center")
