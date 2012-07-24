@@ -32,11 +32,8 @@
 ;;;
 ;;;     (require 'bbcode-mode)
 ;;;
-;;; No filetypes are automatically associated with bbcode-mode.
-;;; Therefore you will need to enable it manually before you can use
-;;; it.  Suggestions are to either bind a key for this purpose or
-;;; modifying the variable `auto-mode-alist' to associate bbcode-mode
-;;; with one or more filetypes.
+;;; Files with the '.bbcode' extension automatically enable
+;;; bbcode-mode.  No other extensions are associated with the mode.
 
 (defconst bbcode-mode-version-number "1.0.1"
   "BBCode Mode version number.")
@@ -157,5 +154,7 @@ buffer."
 (bbcode/make-key-binding "C-c C-b h" "th")
 (bbcode/make-key-binding "C-c C-b r" "tr")
 (bbcode/make-key-binding "C-c C-b d" "td")
+
+(add-to-list 'auto-mode-alist '("\\.bbcode$" . bbcode-mode))
 
 (provide 'bbcode-mode)
