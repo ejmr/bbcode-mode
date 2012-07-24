@@ -11,6 +11,11 @@ please include the value of `bbcode-mode-version-number` and, if you
 have cloned the official Git repository, the commit hash of the
 version you are using.
 
+[There is another `bbcode-mode`](https://bitbucket.org/jfm/emacs-bbcode/)
+out there.  The biggest different is that my version supports more
+tags.  However, some users may prefer the more simple key-bindings of
+the other version, written by Jason McBrayer.  Please try out both.
+
 Supported Tags
 --------------
 
