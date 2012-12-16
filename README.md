@@ -16,6 +16,7 @@ out there.  The biggest different is that my version supports more
 tags.  However, some users may prefer the more simple key-bindings of
 the other version, written by Jason McBrayer.  Please try out both.
 
+
 Supported Tags
 --------------
 
@@ -41,7 +42,12 @@ Supported Tags
 * `[img]`
 
 
+License
+-------
+
+[GNU General Public License][gpl]
+
 
 [bbc]: http://bbcode.org/
-
 [emacs]: http://www.gnu.org/software/emacs/
+[gpl]: http://www.gnu.org/copyleft/gpl.html
