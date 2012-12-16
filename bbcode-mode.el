@@ -124,6 +124,7 @@ the macro `kbd', to a function that will insert `tag' into the
 buffer."
   `(define-key bbcode-mode-map (kbd ,key)
     '(lambda (prefix)
+       ,(format "Insert the [%s] tag at point or around the current region" tag)
        (interactive "P")
        (bbcode/insert-tag prefix (region-beginning) (region-end) ,tag))))
 
