@@ -77,7 +77,7 @@ selected a region.  If the function is called with the universal
 prefix argument then the point will be placed in the opening tag
 so the user can enter any attributes."
   (interactive "PrMTag: ")
-  (if (and transient-mark-mode mark-active)
+  (if mark-active
       (progn
         (kill-region start end)
         (insert (format "[%s]" tag))
