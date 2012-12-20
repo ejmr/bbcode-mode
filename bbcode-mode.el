@@ -122,11 +122,13 @@ so the user can enter any attributes."
   "Binds the sequence `key', which must be a valid argument for
 the macro `kbd', to a function that will insert `tag' into the
 buffer."
-  `(define-key bbcode-mode-map (kbd ,key)
-    '(lambda (prefix)
+  (let ((function-name (make-symbol (format "bbcode/insert-tag-%s" tag))))
+  `(progn
+     (defun ,function-name (prefix)
        ,(format "Insert the [%s] tag at point or around the current region" tag)
        (interactive "P")
-       (bbcode/insert-tag prefix (region-beginning) (region-end) ,tag))))
+       (bbcode/insert-tag prefix (region-beginning) (region-end) ,tag))
+     (define-key bbcode-mode-map (kbd ,key) ',function-name))))
 
 ;; Keys that insert most tags are prefixed with 'C-c C-t'.
 (bbcode/make-key-binding "C-c C-t i" "i")
