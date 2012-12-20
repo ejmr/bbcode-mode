@@ -35,7 +35,7 @@
 ;;; Files with the '.bbcode' extension automatically enable
 ;;; bbcode-mode.  No other extensions are associated with the mode.
 
-(defconst bbcode-mode-version-number "1.0.2"
+(defconst bbcode-mode-version-number "1.1.0"
   "BBCode Mode version number.")
 
 (defun bbcode/make-tag-regex (tag)
