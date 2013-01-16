@@ -103,6 +103,7 @@ so the user can enter any attributes."
         (insert "="))
     (search-backward "[")))
 
+;;;###autoload
 (define-derived-mode bbcode-mode text-mode "BBCode"
   "Major mode for writing BBCode markup.
 
@@ -162,6 +163,7 @@ buffer."
 (bbcode/make-key-binding "C-c C-b r" "tr")
 (bbcode/make-key-binding "C-c C-b d" "td")
 
+;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.bbcode$" . bbcode-mode))
 
 (provide 'bbcode-mode)
