@@ -1,6 +1,6 @@
 ;;; bbcode-mode.el --- Major mode for writing BBCode markup
 ;;;
-;;; Copyright 2012 Eric James Michael Ritz
+;;; Copyright 2012, 2013 Eric James Michael Ritz
 ;;;     <lobbyjones@gmail.com>
 ;;;     <http://github.com/ejmr/bbcode-mode>
 ;;;
