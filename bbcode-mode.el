@@ -4,7 +4,7 @@
 ;;
 ;; Author: Eric James Michael Ritz <lobbyjones@gmail.com>
 ;; URL: https://github.com/ejmr/bbcode-mode
-;; Version: 1.1.0
+;; Version: 1.1.1
 ;;
 ;;
 ;;
@@ -39,7 +39,7 @@
 
 ;;; Code:
 
-(defconst bbcode-mode-version-number "1.1.0"
+(defconst bbcode-mode-version-number "1.1.1"
   "BBCode Mode version number.")
 
 (defun bbcode/make-tag-regex (tag)
