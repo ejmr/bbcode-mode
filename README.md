@@ -38,6 +38,7 @@ Key-bindings for common tags begin with `C-c C-t`.
 * `[center]`: `C-c C-t n`
 * `[code]`: `C-c C-t c`
 * `[email]`: `C-c C-t e`
+* `[gvideo]`: `C-c C-t g`
 * `[i]`: `C-c C-t i`
 * `[img]`: `C-c C-t m`
 * `[quote]`: `C-c C-t q`
