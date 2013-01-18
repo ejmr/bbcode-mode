@@ -55,6 +55,7 @@ The expression contains no capture groups."
    `(,(bbcode/make-tag-regex "center") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "code") . 'font-lock-function-name-face)
    `(,(bbcode/make-tag-regex "color") . 'font-lock-variable-name-face)
+   `(,(bbcode/make-tag-regex "email") . 'link)
    `(,(bbcode/make-tag-regex "i") . 'italic)
    `(,(bbcode/make-tag-regex "img") . 'link)
    `(,(bbcode/make-tag-regex "li") . 'font-lock-keyword-face)
@@ -140,6 +141,7 @@ buffer."
 ;; Keys that insert most tags are prefixed with 'C-c C-t'.
 (bbcode/make-key-binding "C-c C-t b" "b")
 (bbcode/make-key-binding "C-c C-t c" "code")
+(bbcode/make-key-binding "C-c C-t e" "email")
 (bbcode/make-key-binding "C-c C-t i" "i")
 (bbcode/make-key-binding "C-c C-t l" "url")
 (bbcode/make-key-binding "C-c C-t m" "img")

@@ -37,6 +37,7 @@ Key-bindings for common tags begin with `C-c C-t`.
 * `[center]`: `C-c C-t n`
 * `[quote]`: `C-c C-t q`
 * `[youtube]`: `C-c C-t y`
+* `[email]`: `C-c C-t e`
 
 ### Font Tags ###
 
