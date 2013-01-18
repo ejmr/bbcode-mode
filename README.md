@@ -6,7 +6,7 @@ This project adds support for writing [Bulletin Board Code][bbc] in
 file in your `load-path` and then add `(require 'bbcode-mode)` to your
 Emacs configuration file.
 
-BBCode mode is still a work in progress.  When sending bug reports
+BBCode Mode is still a work in progress.  When sending bug reports
 please include the value of `bbcode-mode-version-number` and, if you
 have cloned the official Git repository, the commit hash of the
 version you are using.
@@ -19,13 +19,20 @@ by Jason McBrayer and Xah Lee.
 Supported Tags
 --------------
 
-BBCode mode supports the following tags, with the following
-key-bindings to insert them.  If you have a selected region then
-BBCode mode will wrap the tag around the region.
+Below is a list of all the tags BBCode Mode supports.  It also lists
+the key-bindings to insert those tags.  If you have a selected region
+then BBCode Mode will wrap the tag around the region.
+
+Each key-binding has three parts.  They all begin with `C-c`.  The
+second part indicates the ‘group’ to which the binding belongs.  And
+the third part is a single letter named after the actual tag.  Each
+section below provides a mnemonic to help remember the second part.
 
 ### Common Tags ###
 
 Key-bindings for common tags begin with `C-c C-t`.
+
+**Mnemonic:** ‘**T**ag’
 
 * `[b]`: `C-c C-t b`
 * `[center]`: `C-c C-t n`
@@ -43,6 +50,8 @@ Key-bindings for common tags begin with `C-c C-t`.
 
 Key-bindings related to font tags begin with `C-c C-f`.
 
+**Mnemonic:** ‘**F**ont’
+
 * `[color]`: `C-c C-f c`
 * `[size]`: `C-c C-f s`
 
@@ -50,12 +59,16 @@ Key-bindings related to font tags begin with `C-c C-f`.
 
 Key-bindings for list tags begin with `C-c C-l`.
 
+**Mnemonic:** ‘**L**ist’
+
 * `[li]`: `C-c C-l i`
 * `[list]`: `C-c C-l l`
 * `[ol]`: `C-c C-l o`
 * `[ul]`: `C-c C-l u`
 
 ### Table Tags ###
+
+**Mnemonic:** ‘Ta**b**le’
 
 Key-bindings for table tags begin with `C-c C-b`.
 
@@ -68,6 +81,8 @@ Key-bindings for table tags begin with `C-c C-b`.
 
 These are tags which are uncommon in BBCode and may even be unique to
 specific websites.  These key-bindings all begin with `C-c C-s`.
+
+**Mnemonic:** ‘**S**pecial’
 
 * `[attachment]`: `C-c C-s a`
 
