@@ -32,7 +32,7 @@ section below provides a mnemonic to help remember the second part.
 
 Key-bindings for common tags begin with `C-c C-t`.
 
-**Mnemonic:** ‘**T**ag’
+Mnemonic: <strong>T</strong>ag
 
 * `[b]`: `C-c C-t b`
 * `[center]`: `C-c C-t n`
@@ -51,7 +51,7 @@ Key-bindings for common tags begin with `C-c C-t`.
 
 Key-bindings related to font tags begin with `C-c C-f`.
 
-**Mnemonic:** ‘**F**ont’
+Mnemonic: <strong>F</strong>ont
 
 * `[color]`: `C-c C-f c`
 * `[size]`: `C-c C-f s`
@@ -60,7 +60,7 @@ Key-bindings related to font tags begin with `C-c C-f`.
 
 Key-bindings for list tags begin with `C-c C-l`.
 
-**Mnemonic:** ‘**L**ist’
+Mnemonic: <strong>L</strong>ist
 
 * `[li]`: `C-c C-l i`
 * `[list]`: `C-c C-l l`
@@ -69,7 +69,7 @@ Key-bindings for list tags begin with `C-c C-l`.
 
 ### Table Tags ###
 
-**Mnemonic:** ‘Ta**b**le’
+Mnemonic: Ta<strong>b</strong>le
 
 Key-bindings for table tags begin with `C-c C-b`.
 
@@ -83,7 +83,7 @@ Key-bindings for table tags begin with `C-c C-b`.
 These are tags which are uncommon in BBCode and may even be unique to
 specific websites.  These key-bindings all begin with `C-c C-s`.
 
-**Mnemonic:** ‘**S**pecial’
+Mnemonic: <strong>S</strong>ecial
 
 * `[attachment]`: `C-c C-s a`
 
