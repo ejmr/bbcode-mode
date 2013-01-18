@@ -132,7 +132,9 @@ buffer."
      (defun ,function-name (prefix)
        ,(format "Insert the [%s] tag at point or around the current region" tag)
        (interactive "P")
-       (bbcode/insert-tag prefix (region-beginning) (region-end) ,tag))
+       (if (use-region-p)
+           (bbcode/insert-tag prefix (region-beginning) (region-end) ,tag)
+         (bbcode/insert-tag prefix nil nil ,tag)))
      (define-key bbcode-mode-map (kbd ,key) ',function-name))))
 
 ;; Keys that insert most tags are prefixed with 'C-c C-t'.
