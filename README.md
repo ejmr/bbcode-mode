@@ -28,41 +28,41 @@ BBCode mode will wrap the tag around the region.
 Key-bindings for common tags begin with `C-c C-t`.
 
 * `[b]`: `C-c C-t b`
-* `[i]`: `C-c C-t i`
-* `[u]`: `C-c C-t u`
-* `[s]`: `C-c C-t s`
-* `[code]`: `C-c C-t c`
-* `[url]`: `C-c C-t l`
-* `[img]`: `C-c C-t m`
 * `[center]`: `C-c C-t n`
-* `[quote]`: `C-c C-t q`
-* `[youtube]`: `C-c C-t y`
+* `[code]`: `C-c C-t c`
 * `[email]`: `C-c C-t e`
+* `[i]`: `C-c C-t i`
+* `[img]`: `C-c C-t m`
+* `[quote]`: `C-c C-t q`
+* `[s]`: `C-c C-t s`
+* `[u]`: `C-c C-t u`
+* `[url]`: `C-c C-t l`
+* `[youtube]`: `C-c C-t y`
 
 ### Font Tags ###
 
 Key-bindings related to font tags begin with `C-c C-f`.
 
-* `[size]`: `C-c C-f s`
 * `[color]`: `C-c C-f c`
+* `[size]`: `C-c C-f s`
 
 ### List Tags ###
 
 Key-bindings for list tags begin with `C-c C-l`.
 
-* `[list]`: `C-c C-l l`
 * `[li]`: `C-c C-l i`
-* `[ul]`: `C-c C-l u`
+* `[list]`: `C-c C-l l`
 * `[ol]`: `C-c C-l o`
+* `[ul]`: `C-c C-l u`
 
 ### Table Tags ###
 
 Key-bindings for table tags begin with `C-c C-b`.
 
 * `[table]`: `C-c C-b t`
-* `[tr]`: `C-c C-b r`
-* `[th]`: `C-c C-b h`
 * `[td]`: `C-c C-b d`
+* `[th]`: `C-c C-b h`
+* `[tr]`: `C-c C-b r`
 
 
 License
