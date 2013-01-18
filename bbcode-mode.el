@@ -138,32 +138,32 @@ buffer."
      (define-key bbcode-mode-map (kbd ,key) ',function-name))))
 
 ;; Keys that insert most tags are prefixed with 'C-c C-t'.
-(bbcode/make-key-binding "C-c C-t i" "i")
 (bbcode/make-key-binding "C-c C-t b" "b")
-(bbcode/make-key-binding "C-c C-t u" "u")
-(bbcode/make-key-binding "C-c C-t s" "s")
 (bbcode/make-key-binding "C-c C-t c" "code")
+(bbcode/make-key-binding "C-c C-t i" "i")
 (bbcode/make-key-binding "C-c C-t l" "url")
 (bbcode/make-key-binding "C-c C-t m" "img")
-(bbcode/make-key-binding "C-c C-t q" "quote")
 (bbcode/make-key-binding "C-c C-t n" "center")
+(bbcode/make-key-binding "C-c C-t q" "quote")
+(bbcode/make-key-binding "C-c C-t s" "s")
+(bbcode/make-key-binding "C-c C-t u" "u")
 (bbcode/make-key-binding "C-c C-t y" "youtube")
 
 ;; Keys related to modifying font properties begin with 'C-c C-f'.
-(bbcode/make-key-binding "C-c C-f s" "size")
 (bbcode/make-key-binding "C-c C-f c" "color")
+(bbcode/make-key-binding "C-c C-f s" "size")
 
 ;; Keys for creating lists begin with 'C-c C-l'.
-(bbcode/make-key-binding "C-c C-l l" "list")
-(bbcode/make-key-binding "C-c C-l u" "ul")
-(bbcode/make-key-binding "C-c C-l o" "ol")
 (bbcode/make-key-binding "C-c C-l i" "li")
+(bbcode/make-key-binding "C-c C-l l" "list")
+(bbcode/make-key-binding "C-c C-l o" "ol")
+(bbcode/make-key-binding "C-c C-l u" "ul")
 
 ;; Keys for tables begin with 'C-c C-b'
-(bbcode/make-key-binding "C-c C-b t" "table")
+(bbcode/make-key-binding "C-c C-b d" "td")
 (bbcode/make-key-binding "C-c C-b h" "th")
 (bbcode/make-key-binding "C-c C-b r" "tr")
-(bbcode/make-key-binding "C-c C-b d" "td")
+(bbcode/make-key-binding "C-c C-b t" "table")
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.bbcode$" . bbcode-mode))
