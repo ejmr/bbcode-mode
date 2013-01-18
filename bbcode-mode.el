@@ -51,6 +51,7 @@ The expression contains no capture groups."
 
 (defconst bbcode/font-lock-keywords
   (list
+   `(,(bbcode/make-tag-regex "attachment") . 'font-lock-variable-face)
    `(,(bbcode/make-tag-regex "b") . 'bold)
    `(,(bbcode/make-tag-regex "center") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "code") . 'font-lock-function-name-face)
@@ -166,6 +167,9 @@ buffer."
 (bbcode/make-key-binding "C-c C-b h" "th")
 (bbcode/make-key-binding "C-c C-b r" "tr")
 (bbcode/make-key-binding "C-c C-b t" "table")
+
+;; Keys for special, uncommon tags begin with 'C-c C-s'.
+(bbcode/make-key-binding "C-c C-s a" "attachment")
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.bbcode$" . bbcode-mode))

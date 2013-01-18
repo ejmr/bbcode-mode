@@ -64,6 +64,13 @@ Key-bindings for table tags begin with `C-c C-b`.
 * `[th]`: `C-c C-b h`
 * `[tr]`: `C-c C-b r`
 
+### Special Tags ###
+
+These are tags which are uncommon in BBCode and may even be unique to
+specific websites.  These key-bindings all begin with `C-c C-s`.
+
+* `[attachment]`: `C-c C-s a`
+
 
 License
 -------
