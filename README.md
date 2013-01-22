@@ -37,6 +37,7 @@ Mnemonic: <strong>T</strong>ag
 * `[b]`: `C-c C-t b`
 * `[center]`: `C-c C-t n`
 * `[code]`: `C-c C-t c`
+* `[del]`: `C-c C-t d`
 * `[email]`: `C-c C-t e`
 * `[gvideo]`: `C-c C-t g`
 * `[i]`: `C-c C-t i`
@@ -45,6 +46,7 @@ Mnemonic: <strong>T</strong>ag
 * `[s]`: `C-c C-t s`
 * `[u]`: `C-c C-t u`
 * `[url]`: `C-c C-t l`
+* `[wiki]`: `C-c C-t w`
 * `[youtube]`: `C-c C-t y`
 
 ### Font Tags ###
@@ -86,6 +88,7 @@ specific websites.  These key-bindings all begin with `C-c C-s`.
 Mnemonic: <strong>S</strong>ecial
 
 * `[attachment]`: `C-c C-s a`
+* `[manual]`: `C-c C-s m`
 
 
 License
