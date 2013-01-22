@@ -145,7 +145,6 @@ buffer."
 (bbcode/make-key-binding "C-c C-t c" "code")
 (bbcode/make-key-binding "C-c C-t d" "del")
 (bbcode/make-key-binding "C-c C-t e" "email")
-(bbcode/make-key-binding "C-c C-t g" "gvideo")
 (bbcode/make-key-binding "C-c C-t i" "i")
 (bbcode/make-key-binding "C-c C-t l" "url")
 (bbcode/make-key-binding "C-c C-t m" "img")
@@ -153,8 +152,6 @@ buffer."
 (bbcode/make-key-binding "C-c C-t q" "quote")
 (bbcode/make-key-binding "C-c C-t s" "s")
 (bbcode/make-key-binding "C-c C-t u" "u")
-(bbcode/make-key-binding "C-c C-t w" "wiki")
-(bbcode/make-key-binding "C-c C-t y" "youtube")
 
 ;; Keys related to modifying font properties begin with 'C-c C-f'.
 (bbcode/make-key-binding "C-c C-f c" "color")
@@ -174,7 +171,10 @@ buffer."
 
 ;; Keys for special, uncommon tags begin with 'C-c C-s'.
 (bbcode/make-key-binding "C-c C-s a" "attachment")
+(bbcode/make-key-binding "C-c C-s g" "gvideo")
 (bbcode/make-key-binding "C-c C-s m" "manual")
+(bbcode/make-key-binding "C-c C-s w" "wiki")
+(bbcode/make-key-binding "C-c C-s y" "youtube")
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.bbcode$" . bbcode-mode))
