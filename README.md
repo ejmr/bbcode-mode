@@ -91,6 +91,12 @@ Mnemonic: <strong>S</strong>ecial
 * `[youtube]`: `C-c C-t y`
 
 
+Contributors
+------------
+
+* [Sebastian Wiesner](https://github.com/lunaryorn)
+
+
 License
 -------
 
