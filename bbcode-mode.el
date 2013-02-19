@@ -130,7 +130,7 @@ so the user can enter any attributes."
   "Binds the sequence `key', which must be a valid argument for
 the macro `kbd', to a function that will insert `tag' into the
 buffer."
-  (let ((function-name (make-symbol (format "bbcode/insert-tag-%s" tag))))
+  (let ((function-name (intern (format "bbcode/insert-tag-%s" tag))))
   `(progn
      (defun ,function-name (prefix)
        ,(format "Insert the [%s] tag at point or around the current region" tag)
