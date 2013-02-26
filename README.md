@@ -84,10 +84,10 @@ specific websites.  These key-bindings all begin with `C-c C-s`.
 Mnemonic: <strong>S</strong>ecial
 
 * `[attachment]`: `C-c C-s a`
-* `[gvideo]`: `C-c C-t g`
+* `[gvideo]`: `C-c C-s g`
 * `[manual]`: `C-c C-s m`
-* `[wiki]`: `C-c C-t w`
-* `[youtube]`: `C-c C-t y`
+* `[wiki]`: `C-c C-s w`
+* `[youtube]`: `C-c C-s y`
 
 
 Contributors
