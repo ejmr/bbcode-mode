@@ -121,10 +121,10 @@ so the user can enter any attributes."
   ;; programs automatically turn newlines into <br/> tags, which is
   ;; not what we want.  But we still want automatic newlines for
   ;; paragraphs as we write.  So we disable auto-fill-mode in order to
-  ;; avoid actual newlines, but enable longlines-mode so that text
+  ;; avoid actual newlines, but enable visual-line-mode so that text
   ;; is automatically wrapped for readability.
   (auto-fill-mode 0)
-  (longlines-mode 1))
+  (visual-line-mode 1))
 
 (defmacro bbcode/make-key-binding (key tag)
   "Binds the sequence `key', which must be a valid argument for
