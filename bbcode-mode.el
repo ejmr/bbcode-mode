@@ -122,7 +122,7 @@ so the user can enter any attributes."
   ;; not what we want.  But we still want automatic newlines for
   ;; paragraphs as we write.  So we disable auto-fill-mode in order to
   ;; avoid actual newlines, but enable longlines-mode so that text
-  ;; is automatically wrapped for readabality.
+  ;; is automatically wrapped for readability.
   (auto-fill-mode 0)
   (longlines-mode 1))
 
