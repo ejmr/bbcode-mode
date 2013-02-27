@@ -29,7 +29,7 @@
 ;;
 ;;; Commentary:
 ;;
-;; Put this file in your Emacs lisp path (i.e. site-lisp) and add
+;; Put this file in your Emacs Lisp path (i.e. site-lisp) and add
 ;; this to your `.emacs' file:
 ;;
 ;;     (require 'bbcode-mode)
@@ -43,7 +43,8 @@
   "BBCode Mode version number.")
 
 (defun bbcode/make-tag-regex (tag)
-  "Makes a regular expression that matches the given `tag' name.
+  "Make a regular expression that matches the given TAG name.
+
 The expression contains no capture groups."
   (unless (stringp tag)
     (error "Requires a string but called with %s" tag))
@@ -77,12 +78,13 @@ The expression contains no capture groups."
   "Regular expressions to highlight BBCode markup.")
 
 (defun bbcode/insert-tag (prefix start end tag)
-  "Inserts a pair of `tag' in the buffer at the current point and
-then places the point in the middle of the tags.  The tag will be
-wrapped around the points `start' and `end' if the user has
-selected a region.  If the function is called with the universal
-prefix argument then the point will be placed in the opening tag
-so the user can enter any attributes."
+  "Insert a pair of TAG in the buffer at the current point.
+
+This function places the point in the middle of the tags.  The
+tag will be wrapped around the points START and END if the user
+has selected a region.  If the function is called with the
+universal prefix argument then the point will be placed in the
+opening tag so the user can enter any attributes."
   (interactive "PrMTag: ")
   (if (use-region-p)
       (progn
@@ -127,9 +129,9 @@ so the user can enter any attributes."
   (visual-line-mode 1))
 
 (defmacro bbcode/make-key-binding (key tag)
-  "Binds the sequence `key', which must be a valid argument for
-the macro `kbd', to a function that will insert `tag' into the
-buffer."
+  "Bind the sequence KEY to insert TAG into the buffer.
+
+KEY must be a valid argument for the macro `kbd'."
   (let ((function-name (intern (format "bbcode/insert-tag-%s" tag))))
   `(progn
      (defun ,function-name (prefix)
