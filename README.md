@@ -64,6 +64,7 @@ Mnemonic: <strong>L</strong>ist
 * `[list]`: `C-c C-l l`
 * `[ol]`: `C-c C-l o`
 * `[ul]`: `C-c C-l u`
+* `[*]`: `C-c C-l *`
 
 ### Table Tags ###
 
