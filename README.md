@@ -52,6 +52,7 @@ Key-bindings related to font tags begin with `C-c C-f`.
 Mnemonic: <strong>F</strong>ont
 
 * `[color]`: `C-c C-f c`
+* `[font]`: `C-c C-f f`
 * `[size]`: `C-c C-f s`
 
 ### List Tags ###

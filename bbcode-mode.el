@@ -54,16 +54,17 @@ The expression contains no capture groups."
   (list
    `(,(bbcode/make-tag-regex "attachment") . 'font-lock-variable-face)
    `(,(bbcode/make-tag-regex "b") . 'bold)
+   `(,(bbcode/make-tag-regex "*") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "center") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "code") . 'font-lock-function-name-face)
    `(,(bbcode/make-tag-regex "color") . 'font-lock-variable-name-face)
    `(,(bbcode/make-tag-regex "email") . 'link)
+   `(,(bbcode/make-tag-regex "font") . 'font-lock-variable-name-face)
    `(,(bbcode/make-tag-regex "gvideo") . 'font-lock-variable-name-face)
    `(,(bbcode/make-tag-regex "i") . 'italic)
    `(,(bbcode/make-tag-regex "img") . 'link)
    `(,(bbcode/make-tag-regex "li") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "list") . 'font-lock-keyword-face)
-   `(,(bbcode/make-tag-regex "*") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "ol") . 'font-lock-keyword-face)
    `(,(bbcode/make-tag-regex "quote") . 'font-lock-doc-face)
    `(,(bbcode/make-tag-regex "s") . 'default)
@@ -158,6 +159,7 @@ KEY must be a valid argument for the macro `kbd'."
 
 ;; Keys related to modifying font properties begin with 'C-c C-f'.
 (bbcode/make-key-binding "C-c C-f c" "color")
+(bbcode/make-key-binding "C-c C-f f" "font")
 (bbcode/make-key-binding "C-c C-f s" "size")
 
 ;; Keys for creating lists begin with 'C-c C-l'.
