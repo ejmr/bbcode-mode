@@ -89,27 +89,20 @@ has selected a region.  If the function is called with the
 universal prefix argument then the point will be placed in the
 opening tag so the user can enter any attributes."
   (interactive "PrMTag: ")
-  (if (use-region-p)
-      (progn
-        (kill-region start end)
-        (insert (format "[%s]" tag))
-        (yank)
-        (insert (format "[/%s]" tag)))
-    (insert (format "[%s][/%s]" tag tag)))
-  (if prefix
-      ;; If the user called the command with the 'C-u' prefix then we
-      ;; need to find the first tag in the pair instead of the second
-      ;; like usual.  And we want the end of the tag.  But if we just
-      ;; search backwards for ']' we will get the second tag.  Since
-      ;; the point is on that character now we can (backward-char)
-      ;; once and *then* search backwards to get the proper position.
-      (progn
-        (backward-char)
-        (search-backward "]")
-        ;; Since we are entering an attribute go ahead and add the
-        ;; (typically) mandatory '=' character.
-        (insert "="))
-    (search-backward "[")))
+  (let ((opening-tag (format "[%s%s]" tag (if prefix "=" "")))
+        (closing-tag (format "[/%s]" tag))
+        (between-tags ""))
+    (when (and start end)
+      (assert (<= start end))
+      (setq between-tags (buffer-substring start end))
+      (goto-char start)
+      (delete-region start end))
+    (setq start (point))
+    (insert (concat opening-tag between-tags closing-tag))
+    (goto-char (+ start
+                  (if prefix
+                      (1- (length opening-tag))
+                    (+ (length opening-tag) (length between-tags)))))))
 
 ;;;###autoload
 (define-derived-mode bbcode-mode text-mode "BBCode"
